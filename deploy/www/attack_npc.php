@@ -87,6 +87,34 @@ if (getTurns($username) > 0) {
 				if (!$just_villager) { // *** Something beyond just a villager, drop a shuriken. ***
 					addItem($username, 'Shuriken', $quantity = 1);
 					echo "The villager dropped a Shuriken.\n";
+                 } else if ($victom == "villager"){
+
+			if(session ::get('counter')){
+				$counter = session::get('counter');
+			} else {
+				$counter = 1;
+			}
+			$counter = $counter + 1;
+				session::set('counter', $counter);
+		if ($counter>10 , $random_encounter = rand(1,100) ==100) {
+				session::set('counter', 0);
+					$turn_cost = 1;
+			echo "The police have seen your deads go unpunished to long and are attacking in numbers."
+
+			$police_attack = rand(100, 150 + (get$username_bounty/5))
+
+			if (!subtracthealth($username, $police_attack)
+
+				echo "The city is safe once again from the Village's slaughter"
+				echo "Go to the <a href=\"Shrine.php\">shrine</a> to resurrect.<br>\n;
+			} else {
+
+				&police_gold = rand(100, 200);
+
+				echo "The police are no match for your powers!<br>\n";
+				echo "The police have done $polie_attack points of damage!<br>\n";
+				
+				addGold($username, $police_gold);
 				}
 			}
 		} else if ($victim == "samurai") {
