@@ -87,7 +87,76 @@ if (getTurns($username) > 0) {
 				if (!$just_villager) { // *** Something beyond just a villager, drop a shuriken. ***
 					addItem($username, 'Shuriken', $quantity = 1);
 					echo "The villager dropped a Shuriken.\n";
+                 } else if ($victom == "villager"){
+
+			if(session ::get('counter')){
+				$counter = session::get('counter');
+			} else {
+				$counter = 1;
+			}
+			$counter = $counter + 1;
+				session::set('counter', $counter);
+		if ($counter>10 , $random_encounter = rand(1,100) ==100) {
+				session::set('counter', 0);
+					$turn_cost = 1;
+			echo "The police have seen your deads go unpunished to long and are attacking in numbers."
+
+			$police_attack = rand(100, 150 + (get$username_bounty/5))
+
+			if (!subtracthealth($username, $police_attack)
+
+				echo "The city is safe once again from the Village's slaughter"
+				echo "Go to the <a href=\"Shrine.php\">shrine</a> to resurrect.<br>\n;
+			} else {
+
+				&police_gold = rand(100, 200);
+
+				echo "The police are no match for your powers!<br>\n";
+				echo "The police have done $polie_attack points of damage!<br>\n";
+				
+				addGold($username, $police_gold);
 				}
+
+                } else if ($victom == "Theif") {
+
+			if(SESSION::get('counter')){
+	  $counter = SESSION::get('counter');
+	} else {
+	  $counter = 1;
+	}
+	$counter = $counter + 1;
+	SESSION::set('counter', $counter); // Save the current state of the counter.
+	if ($counter>30) { // Only after 30 attacks on the thief do you get attacked by their brethren.
+		SESSION::set('counter', 0);
+			$turn_cost = 1;
+			
+			$random_encounter = rand(1, 100) ==99
+			if (getcounter($username) <5) {
+			echo "A group of theives is waiting for you. They seem to be angered by your attacks on their Theif brethren."
+			
+			$Group_attack= rand(200, 500)
+
+			if (!subtracthealth($username, $Group_attack)
+			
+				echo "The groupf of theives have avenged their brotherhood in a bloody mess."<br>\n";
+				echo "Go to the <a href=\"shrine.php\">shrine</a> to resurrect.<br>\n";
+			} else {
+				$Group_gold = rand(150, 300);
+
+				if ($group_attack > 450)
+				{
+					echo "You overpowered the swine, buut they excaped with some of your memories!\n";
+					subtractkill($username, ????);
+
+					}
+				else if ($group_attack <300)
+				{
+					echo "The Thieves are injured!<br>\n";
+					echo "Thief does $group_attack points of damage!<br>\n";
+					echo "You have gained $group_gold gold.<br> You have found a Shuriken on the thieves!\n";
+
+					addGold($username, $group_gold);
+					addItem($username, 'firescroll', $quantity = 1);
 			}
 		} else if ($victim == "samurai") {
 			$turn_cost = 1;
